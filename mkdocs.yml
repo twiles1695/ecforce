@@ -1,0 +1,36 @@
+site_name: ecforce フロントエンド
+theme:
+  name: "material"
+
+  palette:
+    primary: "Indigo"
+    accent: "Indigo"
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+
+extra_css:
+  - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+  - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+  - "css/custom.css"
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - footnotes
+
+nav:
+  - トップ: index.md
+  - 初期設定:
+      - 新規サイトの構築手順: initial-setting.md
+      - テーマセットアップ: theme-setup.md
+  - Tips:
+      - 商品画像の荒れ改善: product-image-resize.md
+      - マイページの見出しをヘッダーの直下に移動: move-mypage-heading.md
