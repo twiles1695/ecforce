@@ -34,3 +34,6 @@ nav:
   - Tips:
       - 商品画像の荒れ改善: product-image-resize.md
       - マイページの見出しをヘッダーの直下に移動: move-mypage-heading.md
+      - パスワード再設定を管理画面から進める: pw-reset-manual.md
+  - Liquidの書き方:
+      - URLによる条件分岐: if-url.md
