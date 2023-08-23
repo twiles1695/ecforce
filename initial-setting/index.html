@@ -507,7 +507,7 @@
 </li>
 </ul>
 <p>さらに、汎用クラスをまとめた<code>util_customize.css</code>を以下のコードをコピーして作成し、<code>css</code>ファイルにアップロードします。</p>
-<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">charset</span> <span class="s2">&quot;UTF-8&quot;</span>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">charset</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">;</span>
 
 <span class="c">/*=========================================*</span>
 <span class="c">* ecforce utility class</span>
@@ -520,7 +520,7 @@
 <span class="c">* example：&lt;br class=&quot;sp-only&quot;&gt;</span>
 <span class="c">*------------------------------------------*/</span>
 <span class="p">.</span><span class="nc">sp-only</span> <span class="p">{</span>
-  <span class="nt">display</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
   <span class="p">.</span><span class="nc">sp-only</span> <span class="p">{</span>
@@ -547,29 +547,29 @@
 <span class="c">/*------------------------------------------*</span>
 <span class="c">* width</span>
 <span class="c">*------------------------------------------*/</span>
-<span class="p">.</span><span class="nc">w-10</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">10</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-15</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-20</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-25</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-30</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">30</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-35</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">35</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-40</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">40</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-45</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-50</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">50</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-55</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">55</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-60</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">60</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-65</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">65</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-70</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">70</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-75</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">75</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-80</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">80</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-85</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">85</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-90</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">90</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-95</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">95</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
-<span class="p">.</span><span class="nc">w-100</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-10</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">10</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-15</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-20</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-25</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-30</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">30</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-35</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">35</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-40</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">40</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-45</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-50</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">50</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-55</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">55</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-60</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">60</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-65</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">65</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-70</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">70</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-75</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">75</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-80</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">80</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-85</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">85</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-90</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">90</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-95</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">95</span><span class="kt">%</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">w-100</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">;}</span>
 
 <span class="c">/*------------------------------------------*</span>
 <span class="c">* margin</span>
-<span class="c">* If 80px or more, it&#39;ll be 1/2 in SP</span>
+<span class="c">* If more than 80px, it&#39;ll be 1/2 in SP</span>
 <span class="c">*------------------------------------------*/</span>
 <span class="c">/* margin-top */</span>
 <span class="p">.</span><span class="nc">mt-10</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>
