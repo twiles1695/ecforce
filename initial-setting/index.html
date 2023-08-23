@@ -249,8 +249,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-stylecss-scriptjs" title="2. 空のstyle.css, script.jsをファイルアップロード" class="md-nav__link">
-    2. 空のstyle.css, script.jsをファイルアップロード
+  <a href="#2" title="2. フォルダの作成とファイルアップロード" class="md-nav__link">
+    2. フォルダの作成とファイルアップロード
   </a>
   
 </li>
@@ -435,8 +435,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-stylecss-scriptjs" title="2. 空のstyle.css, script.jsをファイルアップロード" class="md-nav__link">
-    2. 空のstyle.css, script.jsをファイルアップロード
+  <a href="#2" title="2. フォルダの作成とファイルアップロード" class="md-nav__link">
+    2. フォルダの作成とファイルアップロード
   </a>
   
 </li>
@@ -488,16 +488,294 @@
                 
                 <h1 id="_1">新規サイトの構築手順<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h2 id="1">1. テーマの追加<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>最初は何もテーマが入っていないので、テンプレを追加します。</p>
-<p>ショップ管理 &gt; テーマ管理 &gt; テーマライブラリ &gt; テーマを追加 &gt; 「various_items」をテーマへ追加
-   作成できたら、テーマを適用</p>
-<p>テーマ名は「main_YYMMDD」。
-   <code>YYMMDD</code>は年月日を入れてください。</p>
-<h2 id="2-stylecss-scriptjs">2. 空のstyle.css, script.jsをファイルアップロード<a class="headerlink" href="#2-stylecss-scriptjs" title="Permanent link">&para;</a></h2>
-<p>ディレクトリも空の状態なので、適宜作成ください。</p>
-<p>css/style.css</p>
-<p>js/script.js</p>
-<p>のように作成してください。</p>
+<p>最初はテーマが何も入っていないため、初期テンプレートを追加します。</p>
+<p>ショップ管理 &gt; テーマ管理 &gt; テーマライブラリ &gt; テーマを追加 &gt; 「various_items」をテーマへ追加<br></p>
+<p>テーマ名を「main_YYMMDD」に編集します。<br>
+   <code>YYMMDD</code>は作成時の年月日を入れてください。</p>
+<p>作成したテーマを適用してよいかどうかは案件によるため、必ずディレクターにご確認ください。<br>
+   既にLPなどで運用している場合は、適用せず、プレビュー環境でコーディングを進めます。</p>
+<h2 id="2">2. フォルダの作成とファイルアップロード<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>ファイルのアップロードは、作成したテーマ名の右「アクション」&gt; コードの編集 にいき、タブの「ファイルアップロード」を選択します。</p>
+<p><img alt="" src="../img/initial-setting_01.png" /></p>
+<p>初期状態では空の状態なので、フォルダを作成します。</p>
+<ul>
+<li>
+<p><code>css</code>フォルダを作成し、空の<code>style.css</code>をアップロード</p>
+</li>
+<li>
+<p><code>js</code>フォルダを作成し、空の<code>script.js</code>をアップロード</p>
+</li>
+</ul>
+<p>さらに、汎用クラスをまとめた<code>util_customize.css</code>を以下のコードをコピーして作成し、<code>css</code>ファイルにアップロードします。</p>
+<div class="codehilite"><pre><span></span><span class="p">@</span><span class="k">charset</span> <span class="s2">&quot;UTF-8&quot;</span>
+
+<span class="c">/*=========================================*</span>
+<span class="c">* ecforce utility class</span>
+<span class="c">* SP breakpoint：719px</span>
+<span class="c">*==========================================*/</span>
+
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* PC SP only</span>
+<span class="c">* example：&lt;br class=&quot;sp-only&quot;&gt;</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">sp-only</span> <span class="p">{</span>
+  <span class="nt">display</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">sp-only</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="p">.</span><span class="nc">pc-only</span> <span class="p">{</span>
+    <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* flex</span>
+<span class="c">* example：class=&quot;flex -jc-center&quot;</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">flex</span> <span class="p">{</span><span class="k">display</span><span class="p">:</span> <span class="kc">flex</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-jc-start</span> <span class="p">{</span><span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-jc-end</span> <span class="p">{</span><span class="k">justify-content</span><span class="p">:</span> <span class="kc">flex-end</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-jc-center</span> <span class="p">{</span><span class="k">justify-content</span><span class="p">:</span> <span class="kc">center</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-jc-between</span> <span class="p">{</span><span class="k">justify-content</span><span class="p">:</span> <span class="kc">space-between</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-al-start</span> <span class="p">{</span><span class="k">align-items</span><span class="p">:</span> <span class="kc">flex-start</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-al-end</span> <span class="p">{</span><span class="k">align-items</span><span class="p">:</span> <span class="kc">flex-end</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">flex</span><span class="p">.</span><span class="nc">-al-center</span> <span class="p">{</span><span class="k">align-items</span><span class="p">:</span> <span class="kc">center</span><span class="p">;}</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* width</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">w-10</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">10</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-15</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">15</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-20</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">20</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-25</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">25</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-30</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">30</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-35</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">35</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-40</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">40</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-45</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">45</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-50</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">50</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-55</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">55</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-60</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">60</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-65</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">65</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-70</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">70</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-75</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">75</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-80</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">80</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-85</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">85</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-90</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">90</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-95</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">95</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+<span class="p">.</span><span class="nc">w-100</span><span class="p">{</span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">%</span><span class="p">}</span><span class="o">;</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* margin</span>
+<span class="c">* If 80px or more, it&#39;ll be 1/2 in SP</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="c">/* margin-top */</span>
+<span class="p">.</span><span class="nc">mt-10</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-15</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-20</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-25</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-30</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">30</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-35</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">35</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-40</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-45</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-50</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-55</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">55</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-60</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-65</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">65</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-70</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-75</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">75</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-80</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-85</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">85</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-90</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-95</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">95</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-100</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-120</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">120</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-140</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">140</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-160</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">160</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-180</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">180</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mt-200</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">200</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">mt-80</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-85</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mf">42.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-90</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-95</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mf">47.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-100</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-120</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-140</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-160</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-180</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mt-200</span><span class="p">{</span><span class="k">margin-top</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">}</span>
+
+<span class="c">/* margin-bottom */</span>
+<span class="p">.</span><span class="nc">mb-10</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-15</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-20</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-25</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-30</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">30</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-35</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">35</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-40</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-45</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-50</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-55</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">55</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-60</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-65</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">65</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-70</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-75</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">75</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-80</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-85</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">85</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-90</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-95</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">95</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-100</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-120</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">120</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-140</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">140</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-160</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">160</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-180</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">180</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mb-200</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">200</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">mb-80</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-85</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mf">42.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-90</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-95</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mf">47.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-100</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-120</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-140</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-160</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-180</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mb-200</span><span class="p">{</span><span class="k">margin-bottom</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">}</span>
+
+<span class="c">/* margin-right */</span>
+<span class="p">.</span><span class="nc">mr-10</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-15</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-20</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-25</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-30</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">30</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-35</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">35</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-40</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-45</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-50</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-55</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">55</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-60</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-65</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">65</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-70</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-75</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">75</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-80</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-85</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">85</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-90</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-95</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">95</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-100</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-120</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">120</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-140</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">140</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-160</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">160</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-180</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">180</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">mr-200</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">200</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">mr-80</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-85</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mf">42.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-90</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-95</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mf">47.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-100</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-120</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-140</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-160</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-180</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">mr-200</span><span class="p">{</span><span class="k">margin-right</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">}</span>
+
+<span class="c">/* margin-left */</span>
+<span class="p">.</span><span class="nc">ml-10</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-15</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-20</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-25</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-30</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">30</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-35</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">35</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-40</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-45</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-50</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-55</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">55</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-60</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-65</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">65</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-70</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-75</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">75</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-80</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-85</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">85</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-90</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-95</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">95</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-100</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-120</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">120</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-140</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">140</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-160</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">160</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-180</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">180</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ml-200</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">200</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">719px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="p">.</span><span class="nc">ml-80</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">40</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-85</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mf">42.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-90</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">45</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-95</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mf">47.5</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-100</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">50</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-120</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">60</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-140</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">70</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-160</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">80</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-180</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">90</span><span class="kt">px</span><span class="p">;}</span>
+  <span class="p">.</span><span class="nc">ml-200</span><span class="p">{</span><span class="k">margin-left</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;}</span>
+<span class="p">}</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* font-size</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">f-6</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">6</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-7</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">7</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-8</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">8</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-9</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">9</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-10</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">10</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-11</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">11</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-12</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">12</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-13</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">13</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-14</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">14</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-15</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">15</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-16</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-17</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">17</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-18</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">18</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-19</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">19</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-20</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">20</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-21</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">21</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-22</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">22</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-23</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">23</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-24</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">24</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-25</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">25</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-26</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">26</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-27</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">27</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-28</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">28</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-29</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">29</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-30</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">30</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-31</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">31</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">f-32</span><span class="p">{</span><span class="k">font-size</span><span class="p">:</span><span class="mi">32</span><span class="kt">px</span><span class="cp">!important</span><span class="p">;}</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* font-weight</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">fw-100</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">100</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-200</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">200</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-300</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">300</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-400</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">400</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-500</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">500</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-600</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">600</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-700</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">700</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-800</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">800</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">fw-900</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span><span class="mi">900</span><span class="p">;}</span>
+
+<span class="c">/*------------------------------------------*</span>
+<span class="c">* text-align</span>
+<span class="c">*------------------------------------------*/</span>
+<span class="p">.</span><span class="nc">ta-l</span><span class="p">{</span><span class="k">text-align</span><span class="p">:</span><span class="kc">left</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ta-c</span><span class="p">{</span><span class="k">text-align</span><span class="p">:</span><span class="kc">center</span><span class="p">;}</span>
+<span class="p">.</span><span class="nc">ta-r</span><span class="p">{</span><span class="k">text-align</span><span class="p">:</span><span class="kc">right</span><span class="p">;}</span>
+</pre></div>
+
+
 <h2 id="3">3. レイアウトテンプレートに読み込み記述を追加<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <p>参考</p>
 <p>【購入ページ】 <br />
@@ -505,22 +783,31 @@
 <p>【購入以外ページ】<br>
    ec_force/shop.html.liquid?new=1</p>
 <p>※ レイアウトは上記2種類あるのでどちらにも記述ください</p>
-<p>CSS：14行目のような形で読み込みをしてください。
-   <link rel="stylesheet" href="{{ file_root_path }}/css/style.css?{{ "now" | date: "%Y%m%d%H%M" }}"></p>
-<div class="codehilite"><pre><span></span><span class="x">  ?</span><span class="cp">{{</span> <span class="s2">&quot;now&quot;</span> <span class="o">|</span> <span class="nf">date</span><span class="o">:</span> <span class="err">“%</span><span class="nv">Y</span><span class="err">%</span><span class="nv">m</span><span class="err">%</span><span class="nv">d</span><span class="err">%</span><span class="nv">H</span><span class="err">%</span><span class="nv">M</span><span class="err">”</span> <span class="cp">}}</span><span class="x"> は、キャッシュ対策です。開発完了したら削除した方がよいです。</span>
+<p>CSS：14行目あたりで以下のように読み込みをしてください。
+   <link rel="stylesheet" href="{{ file_root_path }}/css/style.css?{{ "now" | date: "%Y%m%d%H%M" }}">
+   <link rel="stylesheet" href="{{ file_root_path }}/css/util_customize.css"></p>
+<div class="codehilite"><pre><span></span><span class="x">  ?</span><span class="cp">{{</span> <span class="s2">&quot;now&quot;</span> <span class="o">|</span> <span class="nf">date</span><span class="o">:</span> <span class="err">“%</span><span class="nv">Y</span><span class="err">%</span><span class="nv">m</span><span class="err">%</span><span class="nv">d</span><span class="err">%</span><span class="nv">H</span><span class="err">%</span><span class="nv">M</span><span class="err">”</span> <span class="cp">}}</span><span class="x"> は、キャッシュ対策です。開発完了したら削除します。</span>
 </pre></div>
 
 
 <p>JS：読み込み場所はどこでもよいですが、</body>の直前で読み込むのが安全です。</p>
 <h2 id="4-customizecss">4. customize.cssの修正<a class="headerlink" href="#4-customizecss" title="Permanent link">&para;</a></h2>
-<p>このファイルは基本修正しませんが、ベースがここに詰まっているので、
-   全体に共通するデザイン
-   ・フォント系（書体、サイズ、太さ）
-   ・カラー
-   ・ボタン（背景色、角丸、枠線）
-   などは一番最初にここで指定してしまうのが最も効率がよいです。</p>
+<p>ecforceではブラウザからコードの編集が可能です。<br>
+   タブのファイル管理に戻り「ツリー表示」をクリックします。<br>
+   すると読み込まれているファイル名が一覧で表示されます。</p>
+<p><img alt="" src="../img/initial-setting_02.png" /></p>
+<p><code>theme_customize.css</code>をクリックします。</p>
+<p><img alt="" src="../img/initial-setting_04.png" /></p>
+<p>（注意：util_customize.cssとは別ファイルです）</p>
+<p>このファイルは基本的には修正しないのですが、サイト全体に共通する以下の記述がありますので   </p>
+<ul>
+<li>フォント系（書体、サイズ、太さ）</li>
+<li>カラー</li>
+<li>ボタン（背景色、角丸、枠線）</li>
+</ul>
+<p>セットアップ時にまとめて修正します。</p>
 <p>その際、漏れのないようご注意ください。</p>
-<p>詳しくは<a href="../theme-setup/">こちら</a></p>
+<p>具体的な修正方法は<a href="../theme-setup/">こちら</a>を参照ください。</p>
 <h2 id="5">5. ヘッダー・フッターのコーディング<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <h2 id="6">6. その他ページのコーディング<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
                 
