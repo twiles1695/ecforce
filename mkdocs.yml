@@ -28,6 +28,8 @@ markdown_extensions:
 
 nav:
   - トップ: index.md
+  - 開発体制・環境: dev-env.md
+  - コーディング仕様: spec.md
   - 初期設定:
       - 新規サイトの構築手順: initial-setting.md
       - テーマセットアップ: theme-setup.md
