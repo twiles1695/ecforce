@@ -1,88 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://twiles1695.github.io/ecforce/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://twiles1695.github.io/ecforce/coupon/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://twiles1695.github.io/ecforce/dev-env/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/error-sku-master/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/if-url/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://twiles1695.github.io/ecforce/initial-setting/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/js-error/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/lp/</loc>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/move-mypage-heading/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/news/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/product-image-resize/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/pw-reset-manual/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/required/</loc>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/seo/</loc>
-         <lastmod>2025-07-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://twiles1695.github.io/ecforce/spec/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/speed-improvement/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://twiles1695.github.io/ecforce/theme-setup/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <loc>https://twiles1695.github.io/ecforce/swiper/</loc>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/url/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://twiles1695.github.io/ecforce/variable/</loc>
-         <lastmod>2025-07-21</lastmod>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/setup/</loc>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/setup/dev-env/</loc>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/setup/initial-setting/</loc>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/setup/spec/</loc>
+         <lastmod>2025-07-23</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://twiles1695.github.io/ecforce/setup/theme-setup/</loc>
+         <lastmod>2025-07-23</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -5,14 +5,13 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
-<meta content=".c-product_img__sliderにsplideが使われているが、規格を選択すると画像がリサイズされ（ファイルパスの最後に-largeが付く）、画像が荒くなっているように見える。
-対策は、規格を選択した時に、パスを上書きする。" name="description"/>
-<link href="https://twiles1695.github.io/ecforce/product-image-resize/" rel="canonical"/>
-<link href="../required/" rel="prev"/>
-<link href="../move-mypage-heading/" rel="next"/>
+<meta content="本家リファレンス" name="description"/>
+<link href="https://twiles1695.github.io/ecforce/swiper/" rel="canonical"/>
+<link href="../variable/" rel="prev"/>
+<link href="../required/" rel="next"/>
 <link href="../assets/images/favicon.png" rel="icon"/>
 <meta content="mkdocs-1.5.3, mkdocs-material-9.4.10" name="generator"/>
-<title>商品画像の荒れ改善 - ecforceコーディング</title>
+<title>Swiperの実装 - ecforceコーディング</title>
 <link href="../assets/stylesheets/main.fad675c6.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.356b1318.min.css" rel="stylesheet"/>
 <meta content="TIF2JT74rmOj6hpNh0ukSq5kdkJjr5JmrKz9EweoBOs" name="google-site-verification">
@@ -25,15 +24,13 @@
 <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-XYCXYF03XH"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-XYCXYF03XH",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-XYCXYF03XH",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-</meta><meta content="商品画像の荒れ改善" name="title"/><meta content="website" property="og:type"/><meta content="https://twiles1695.github.io/ecforce/product-image-resize" property="og:url"/><meta content="商品画像の荒れ改善" property="og:title"/><meta content=".c-product_img__sliderにsplideが使われているが、規格を選択すると画像がリサイズされ（ファイルパスの最後に-largeが付く）、画像が荒くなっているように見える。
-対策は、規格を選択した時に、パスを上書きする。" property="og:description"/><meta content="summary_large_image" property="twitter:card"/><meta content="https://twiles1695.github.io/ecforce/product-image-resize" property="twitter:url"/><meta content="商品画像の荒れ改善" property="twitter:title"/><meta content=".c-product_img__sliderにsplideが使われているが、規格を選択すると画像がリサイズされ（ファイルパスの最後に-largeが付く）、画像が荒くなっているように見える。
-対策は、規格を選択した時に、パスを上書きする。" property="twitter:description"/></head>
+</meta><meta content="Swiperの実装" name="title"/><meta content="website" property="og:type"/><meta content="https://twiles1695.github.io/ecforce/swiper" property="og:url"/><meta content="Swiperの実装" property="og:title"/><meta content="本家リファレンス" property="og:description"/><meta content="summary_large_image" property="twitter:card"/><meta content="https://twiles1695.github.io/ecforce/swiper" property="twitter:url"/><meta content="Swiperの実装" property="twitter:title"/><meta content="本家リファレンス" property="twitter:description"/></head>
 <body data-md-color-accent="Indigo" data-md-color-primary="Indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#splide">
+<a class="md-skip" href="#swiper">
           Skip to content
         </a>
 </div>
@@ -57,7 +54,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              商品画像の荒れ改善
+              Swiperの実装
             
           </span>
 </div>
@@ -136,7 +133,7 @@
       </a>
 </li>
 <li class="md-tabs__item md-tabs__item--active">
-<a class="md-tabs__link" href="../swiper/">
+<a class="md-tabs__link" href="./">
           
   
   Tips
@@ -314,12 +311,48 @@
             Tips
           </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../swiper/">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Swiperの実装
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     Swiperの実装
   </span>
 </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cdn">
+<span class="md-ellipsis">
+      CDN読み込み
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#js">
+<span class="md-ellipsis">
+      JS記述
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../required/">
@@ -328,9 +361,8 @@
   </span>
 </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<a class="md-nav__link md-nav__link--active" href="./">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../product-image-resize/">
 <span class="md-ellipsis">
     商品画像の荒れ改善
   </span>
@@ -452,33 +484,77 @@
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#cdn">
+<span class="md-ellipsis">
+      CDN読み込み
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#js">
+<span class="md-ellipsis">
+      JS記述
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      参考
+    </span>
+</a>
+</li>
+</ul>
 </nav>
 </div>
 </div>
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="splide">商品詳細ページ splideを使った場合に商品画像が荒れる<a class="headerlink" href="#splide" title="Permanent link">¶</a></h1>
-<p><code>.c-product_img__slider</code>にsplideが使われているが、規格を選択すると画像がリサイズされ（ファイルパスの最後に<code>-large</code>が付く）、画像が荒くなっているように見える。
-対策は、規格を選択した時に、パスを上書きする。</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">  </span><span class="c1">// 規格を選択すると商品画像がサムネイル画像パスになるのでoriginalで上書き</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'change'</span><span class="p">,</span><span class="w"> </span><span class="s1">'.input_option_type'</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">      </span><span class="nx">$</span><span class="p">(</span><span class="s1">'.c-product_img__image'</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="kd">let</span><span class="w"> </span><span class="nx">origin_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'src'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-large/</span><span class="p">,</span><span class="w"> </span><span class="s1">'-original'</span><span class="p">);</span>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">'src'</span><span class="p">,</span><span class="w"> </span><span class="nx">origin_url</span><span class="p">);</span>
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">      </span><span class="p">});</span>
-<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">800</span><span class="p">);</span><span class="w"> </span><span class="c1">// 0.8秒後にすることでecforceのJSより後に実行</span>
-<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">  </span><span class="p">});</span>
+<h1 id="swiper">Swiperの実装<a class="headerlink" href="#swiper" title="Permanent link">¶</a></h1>
+<h2 id="cdn">CDN読み込み<a class="headerlink" href="#cdn" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"</span> <span class="p">/&gt;</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">"https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>参照 <a href="https://qiita.com/katsu105/items/774d199bb6bf2bdc945f">jQueryで.changeメソッドが効かなくて困ったこと</a></p>
+<h2 id="js">JS記述<a class="headerlink" href="#js" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">swiper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Swiper</span><span class="p">(</span><span class="s1">'.swiper'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="c1">// 任意パラメーター</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="nx">direction</span><span class="o">:</span><span class="w"> </span><span class="s1">'vertical'</span><span class="p">,</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">  </span><span class="nx">loop</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">  </span><span class="c1">// ページネーションが必要な場合</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="nx">pagination</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="nx">el</span><span class="o">:</span><span class="w"> </span><span class="s1">'.swiper-pagination'</span><span class="p">,</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">  </span><span class="c1">// ナビゲーション矢印</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">  </span><span class="nx">navigation</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">    </span><span class="nx">nextEl</span><span class="o">:</span><span class="w"> </span><span class="s1">'.swiper-button-next'</span><span class="p">,</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">    </span><span class="nx">prevEl</span><span class="o">:</span><span class="w"> </span><span class="s1">'.swiper-button-prev'</span><span class="p">,</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">  </span><span class="c1">// スクロールバーが必要な場合</span>
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">  </span><span class="nx">scrollbar</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="nx">el</span><span class="o">:</span><span class="w"> </span><span class="s1">'.swiper-scrollbar'</span><span class="p">,</span>
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">  </span><span class="p">},</span>
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="p">});</span>
+</code></pre></div>
+<h2 id="_1">参考<a class="headerlink" href="#_1" title="Permanent link">¶</a></h2>
+<p><a href="https://swiperjs.com/get-started">本家リファレンス</a></p>
+<p><a href="https://freefuntimes.com/?p=783">画面幅内に任意の枚数を表示させるSwiperスライダーを実装してみる（備忘録）</a></p>
 </article>
 </div>
 </div>
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: 必須マークの置換" class="md-footer__link md-footer__link--prev" href="../required/">
+<a aria-label="Previous: 変数一覧" class="md-footer__link md-footer__link--prev" href="../variable/">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -487,17 +563,17 @@
                 Previous
               </span>
 <div class="md-ellipsis">
-                必須マークの置換
+                変数一覧
               </div>
 </div>
 </a>
-<a aria-label="Next: マイページの見出しをヘッダーの直下に移動" class="md-footer__link md-footer__link--next" href="../move-mypage-heading/">
+<a aria-label="Next: 必須マークの置換" class="md-footer__link md-footer__link--next" href="../required/">
 <div class="md-footer__title">
 <span class="md-footer__direction">
                 Next
               </span>
 <div class="md-ellipsis">
-                マイページの見出しをヘッダーの直下に移動
+                必須マークの置換
               </div>
 </div>
 <div class="md-footer__button md-icon">
